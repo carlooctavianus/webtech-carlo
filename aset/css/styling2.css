@@ -1,0 +1,843 @@
+
+/* --- Bagian Warna Utama --- */
+/* Warna Ducati */
+.bg-ducati {
+    background-color: #CC0000;
+}
+
+/* Styling Navbar */
+.navbar-ducati {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparansi agar efek blur berfungsi */
+    backdrop-filter: blur(6px); /* Efek Blur Transparan */
+    padding: 6px;
+    transition: background-color 0.3s ease; /* Transisi saat scroll (opsional) */
+}
+
+/* --- Styling Button 'Discover More' --- */
+.marc-discover-btn {
+    /* KUNCI: Membuatnya berperilaku seperti tombol solid dan dapat diklik */
+    display: inline-block; /* Memastikan padding bekerja dengan baik */
+    cursor: pointer; /* Kursor tangan, memperbaiki masalah tampilan 'tidak seperti tombol' */
+    text-decoration: none; /* Menghilangkan underline pada link <a> */
+    
+    /* Warna & Border */
+    background-color: #E10600; /* Merah Ducati */
+    border: 2px solid #E10600;
+    color: #ffffff;
+    
+    /* Font & Ukuran */
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 35px;
+    border-radius: 6px; 
+    letter-spacing: 1px;
+    
+    /* Posisi & Bayangan */
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+    
+    /* Animasi */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Efek HOVER: Tombol Lebih Agresif dan Menyala */
+.marc-discover-btn:hover {
+    /* Warna lebih cerah dan tegas saat disentuh */
+    background-color: #ff3a2f; 
+    border-color: #ff3a2f;
+    
+    /* Efek Mengambang (Naik Sedikit) */
+    transform: translateY(-5px) scale(1.05);
+    
+    /* Efek Neon Merah (GACOR!) */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), /* Bayangan Putih Tipis */
+                0 6px 30px rgba(225, 6, 0, 0.7); /* Bayangan Merah Kuat */
+}
+
+/* Memastikan tombol tetap terlihat bagus saat ditekan (active) */
+.marc-discover-btn:active,
+.marc-discover-btn:focus {
+    background-color: #CC0000 !important;
+    border-color: #CC0000 !important;
+    box-shadow: 0 0 0 0.2rem rgba(225, 6, 0, 0.5) !important;
+    transform: translateY(0);
+}
+
+
+.navbar-marques-center img {
+    height: 90px;   /* ubah sesuai keinginan, contoh 70px */
+}
+
+/* Warna teks dan ikon pada navbar */
+.navbar-ducati .navbar-brand,
+.navbar-ducati .nav-link {
+    color: #CC0000 !important; /* Merah Ducati */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Hamburger toggler garis merah */
+.navbar-ducati .navbar-toggler {
+    border-color: rgba(204, 0, 0, 0.7);
+}
+.navbar-ducati .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(204,0,0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Link di collapse Ducati */
+.ducati-link {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ducati-link.active {
+    color: #ffffff !important; /* Warna teks putih solid */
+    font-weight: 700;
+    /* Tambahkan indikator visual jika perlu, misalnya border kiri */
+    border-left: 3px solid #ebdddc; 
+    padding-left: 10px;
+}
+
+/* Hover collapse -> kuning neon Ducati Corse */
+.ducati-link:hover {
+    color: #FCE300 !important;
+}
+
+/* Garis bawah */
+.ducati-link {
+    position: relative;
+}
+.ducati-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFFFFF;
+    left: 0;
+    bottom: -2px;
+    transition: 0.3s;
+}
+.ducati-link:hover::after {
+    width: 100%;
+}
+
+/* Kasih jarak agar konten tidak tertutup navbar */
+body {
+    padding-top: 90px;
+}
+.navbar-ducati .nav-link.active {
+    color: #E10600 !important; /* HARUS MENANG */
+    font-weight: 700 !important;
+    border-bottom: 2px solid #E10600 !important; 
+}
+.navbar-ducati .nav-link:hover {
+    color: #000000 !important;
+}
+
+.hero-video {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-video .hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* transparansi atas video */
+}
+
+.hero-video .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.85) 0%,   /* menyatu dengan header putih */
+    rgba(255, 255, 255, 0.35) 12%, /* lebih cepat menipis */
+    rgba(255, 255, 255, 0.05) 30%, /* hampir hilang */
+    rgba(0, 0, 0, 0) 100%          /* full transparan */
+  );
+  z-index: 2;
+}
+
+.news-section {
+  position: relative;
+  margin-top: -200px; /* OVERLAP dengan video */
+  z-index: 6;
+  padding-bottom: 90px;
+}
+
+/* GRID LAYOUT */
+.news-grid {
+  width: 82%;
+  margin: auto;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* CARD STYLE */
+.news-card {
+  background: #070c16;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .4);
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor: pointer;
+  min-height: 470px;  /* supaya tekstur tegak lebih stabil */
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .55);
+}
+
+/* IMAGE */
+/* IMAGE PORTRAIT MODE */
+.news-img {
+  width: 100%;
+  height: 330px;     /* lebih tinggi dari landscape */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-bottom: 0;
+}
+
+
+/* BODY */
+.news-body {
+  padding: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.news-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.news-meta {
+  font-size: .85rem;
+  color: #b8c1d1;
+  opacity: .8;
+}
+
+/* CONTAINER PUTIH MENGAMBANG */
+.marc-story-box {
+  background: #ffffff;
+  width: 90%;
+  margin: -120px auto 0; /* naik ke atas supaya dekat tombol discover */
+  border-radius: 32px;
+  padding: 45px 35px 70px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  position: relative;
+  z-index: 10;
+}
+
+.section-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,
+    rgba(255, 0, 0, 0) 0%,
+    #ff0000 20%,
+    #ff1a1a 50%,
+    #ff0000 80%,
+    rgba(255, 0, 0, 0) 100%
+  );
+  margin: -50px 0 60px 0;
+  filter: drop-shadow(0 0 8px #ff1a1a);
+}
+
+.story-title {
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  padding: 0 12px;
+}
+
+/* CARD STYLE */
+/* SECTION BACKGROUND */
+.marc-history {
+  background: linear-gradient(180deg, #04060d, #0b1327 35%, #101d36 100%);
+  margin-top: 0 !important;
+}
+
+/* BOX FUTURISTIK */
+.marc-box {
+  background: rgba(12, 20, 40, 0.72);
+  border: 2px solid rgba(255, 255, 255, .06);
+  border-radius: 38px;
+  padding: 65px 35px;
+  box-shadow: inset 0 0 25px rgba(255, 0, 0, .15), 0 0 55px rgba(0, 0, 0, .45);
+  backdrop-filter: blur(14px);
+}
+
+
+
+/* TITLE */
+.marc-title {
+  font-weight: 900;
+  font-size: 38px;
+  letter-spacing: 1.1px;
+  color: #fff;
+}
+
+/* CARD */
+.mh-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  height: 355px;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, .08);
+  transform: translateY(0) scale(1);
+  transition: .55s cubic-bezier(.19,1,.22,1);
+}
+
+/* FOTO */
+.mh-card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .88;
+  transition: .55s cubic-bezier(.19,1,.22,1);
+}
+
+/* TITLE DALAM CARD */
+.mh-card h4 {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,.65);
+  letter-spacing: .6px;
+}
+
+/* ANIMASI WOW */
+.mh-card:hover {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow: 0 0 22px rgba(255, 0, 0, .45),
+              0 0 34px rgba(255, 0, 0, .30),
+              inset 0 0 15px rgba(255, 255, 255, .12);
+}
+
+/* FOTO ANIMASI PARALLAX */
+.mh-card:hover img {
+  transform: scale(1.12) translateY(-4px);
+  opacity: 1;
+}
+
+.marc-season-full {
+  width: 100%;
+  background: radial-gradient(circle at 20% 50%, #10141F 0%, #05070A 100%);
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.marc-season-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.season-left {
+  flex: 1;
+  z-index: 2;
+}
+
+.season-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #E10600;
+  text-shadow: 0 0 14px rgba(225, 6, 0, .35);
+  margin-bottom: 35px;
+}
+
+.stats-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 22px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 0, 0, .18);
+  padding: 24px 10px;
+  border-radius: 16px;
+  text-align: center;
+  transition: .35s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: #E10600;
+  box-shadow: 0 0 18px rgba(225, 6, 0, .4);
+}
+
+.stat-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #E10600;
+}
+
+.stat-label {
+  font-size: .9rem;
+  letter-spacing: .8px;
+  color: #D0D6E1;
+  text-transform: uppercase;
+}
+
+/* TABEL */
+.season-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 18px;
+  color: #ffffff;
+  font-size: .96rem;
+}
+.season-table th {
+  padding: 10px 6px;
+  font-weight: 600;
+  color: #E10600;
+  width: 160px;
+  text-transform: uppercase;
+}
+.season-table td {
+  padding: 10px 6px;
+  font-weight: 400;
+}
+.flag {
+  width: 24px;
+  height: 16px;
+  margin-right: 6px;
+  border-radius: 2px;
+}
+
+/* GAMBAR MARC */
+.season-right img {
+  max-height: 570px;
+  opacity: .88;
+  filter: drop-shadow(0 0 20px rgba(225,6,0,.5));
+  animation: floatMarc 4.6s ease-in-out infinite;
+}
+
+@keyframes floatMarc {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .marc-season-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .season-right img {
+    max-height: 380px;
+  }
+  .stats-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+  }
+}
+
+.marc-photo {
+  border-radius: 18px;
+  border: 2px solid rgba(255, 0, 0, .45);
+  box-shadow: 0 0 18px rgba(225, 6, 0, .62),
+              0 0 42px rgba(225, 6, 0, .25);
+}
+
+
+.marc-photo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(225, 6, 0, .7),
+              0 0 60px rgba(225, 6, 0, .35);
+  transition: .35s ease;
+}
+
+.biography-section {
+  padding: 110px 0;
+  background: linear-gradient(135deg, #0B0C10, #11141A);
+  position: relative;
+}
+
+.bio-container {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 0 25px;
+}
+
+.bio-photo img {
+  width: 420px;
+  border-radius: 20px;
+  border: 3px solid #E10600;
+  box-shadow: 0 0 22px rgba(225, 6, 0, .35);
+}
+
+.bio-text {
+  flex: 1;
+  color: #d9e1e8;
+}
+
+.bio-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  border-left: 8px solid #E10600;
+  padding-left: 18px;
+  letter-spacing: .5px;
+}
+
+.bio-description {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  opacity: .88;
+  margin-bottom: 26px;
+}
+
+.career-list {
+  list-style: none;
+  padding: 0;
+}
+
+.career-list li {
+  font-size: 1.07rem;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  border-left: 3px solid #E10600;
+  transition: .25s;
+}
+
+.career-list li:hover {
+  transform: translateX(6px);
+  color: #fff;
+  border-left-color: #ff3a2f;
+}
+
+
+.gallery-section {
+  padding: 95px 0 110px;
+  background: linear-gradient(135deg, #0B0C10, #13161D);
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 4px solid #E10600;
+  padding-bottom: 6px;
+}
+
+/* UKURAN TIDAK FULL */
+.gallery-img {
+  width: 78%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin: auto;
+  border: 4px solid rgba(225, 6, 0, .78);
+  box-shadow: 0 0 18px rgba(225, 6, 0, .45);
+  transition: .35s;
+  filter: brightness(.87);
+}
+
+.carousel-item:hover .gallery-img {
+  filter: brightness(1);
+  box-shadow: 0 0 30px rgba(225, 6, 0, .85);
+}
+
+/* ARROW */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) drop-shadow(0 0 8px rgba(255,255,255,.8));
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 6%;
+  transition: .3s;
+  opacity: .45;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* === FORCE PORTRAIT GALLERY === */
+.gallery-item {
+    width: 1px !important;      /* portrait width */
+    height: 420px !important;     /* portrait height */
+    border: 3px solid #E10600 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    background-color: #000 !important;
+}
+
+.gallery-item img {
+    width: auto !important;   /* biar foto berdiri */
+    height: 100% !important;  /* jadikan portrait */
+    object-fit: cover !important;
+}
+
+/* kalau container perlu tinggi */
+.gallery-block {
+    height: 450px !important;
+}
+
+
+
+/* Styling umum untuk section, menggunakan warna hitam pekat (#111111) */
+.partner-section {
+    background-color: #111111; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #f0f0f0; /* Teks berwarna putih keabu-abuan agar kontras */
+}
+
+/* Judul Bagian */
+.partner-section h2 {
+    color: #E60027; /* Merah tegas sebagai aksen */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+/* Style untuk setiap logo container (link <a>) */
+.partner-logo {
+    display: block;
+    width: 120px; 
+    max-width: 100%;
+    transition: transform 0.3s ease; 
+    position: relative; /* Diperlukan untuk efek garis bawah aksen (opsional) */
+}
+
+/* Style untuk gambar logo di dalamnya */
+/* 1. Latar Belakang & Sambungan Visual GACOR */
+/* Menggunakan abu-abu gelap (#1F1F1F) untuk memberikan kontras pada logo hitam */
+.partner-section {
+    background-color: #1F1F1F; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #f0f0f0;
+    
+    /* Efek Sambungan (Opsional GACOR: Garis Merah di Atas) */
+    border-top: 5px solid #E60027; /* Garis Merah Tegas sebagai pemisah visual dari section di atas (gallery) */
+}
+
+
+/* CONTACT SECTION STYLING */
+.contact-section {
+    /* Latar Belakang abu-abu gelap agar menyatu dengan partner section di bawahnya */
+    background-color: #161616;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.contact-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 1rem;
+    color: #E10600; /* Subtitle Merah */
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* FORM STYLING KHUSUS */
+.marquez-form {
+    padding: 30px;
+    background: #0f0f0f; /* Background form lebih gelap dari section */
+    border-radius: 12px;
+    border: 1px solid rgba(225, 6, 0, 0.4); /* Border merah tipis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* INPUT FIELD */
+.marquez-input {
+    background-color: #242424; /* Background input gelap */
+    color: #ffffff; /* Teks yang diketik putih */
+    border: 1px solid #444444;
+    border-radius: 8px; /* Sudut sedikit membulat seperti contoh */
+    padding: 12px 18px;
+    transition: all 0.3s ease;
+}
+
+/* Fokus pada Input (Merah Menyala) */
+.marquez-input:focus {
+    background-color: #242424;
+    color: #ffffff;
+    border-color: #E10600; /* Border Merah Menyala saat fokus */
+    box-shadow: 0 0 0 0.2rem rgba(225, 6, 0, 0.3); /* Ring Merah Khas Bootstrap */
+}
+
+/* KUNCI: Placeholder (Teks Arahan Abu-abu Italic) */
+.marquez-input::placeholder {
+    color: #888888; /* Warna abu-abu redup */
+    font-style: italic; /* Font Italic */
+    opacity: 1; /* Pastikan opacity penuh */
+}
+
+/* TEXTAREA */
+.message-box {
+    resize: vertical; /* Hanya bisa diubah tingginya */
+}
+
+/* TOMBOL KIRIM */
+.marquez-btn {
+    background-color: #E10600; /* Merah Ducati */
+    border-color: #E10600;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.marquez-btn:hover {
+    background-color: #ff3a2f; /* Merah lebih terang saat hover */
+    border-color: #ff3a2f;
+    box-shadow: 0 5px 15px rgba(225, 6, 0, 0.5); /* Efek bayangan menyala */
+    transform: translateY(-2px);
+}
+
+/* Judul Bagian */
+.partner-section h2 {
+    color: #E60027; 
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+/* Style Default untuk logo (Asumsi: logo terang/putih) */
+.partner-logo {
+    display: block;
+    width: 120px; 
+    max-width: 100%;
+    transition: transform 0.3s ease; 
+}
+
+/* 2. LOGO BIASA (TERANG/PUTIH) - Normal & Hover */
+.partner-logo:not(.logo-dark) img {
+    /* Logo putih/terang normal: abu-abu redup di atas background gelap */
+    filter: grayscale(100%) brightness(50%); 
+    opacity: 0.5; 
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-logo:not(.logo-dark):hover img {
+    /* Hover: Kembali ke warna/terang aslinya */
+    filter: grayscale(0%) brightness(100%); 
+    opacity: 1; 
+}
+
+
+/* 3. LOGO HITAM/GELAP (misal: Insta360) - Normal & Hover */
+.partner-logo.logo-dark img {
+    /* Kunci: Membalik warna hitam menjadi putih (invert) agar terlihat di background gelap */
+    filter: invert(100%) grayscale(100%) brightness(100%); 
+    opacity: 0.6; 
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-logo.logo-dark:hover img {
+    /* Hover: Kembali ke warna aslinya (hitam) tapi dengan opacity 1 (terlihat di background abu-abu gelap) */
+    /* Kita kembalikan ke warna hitam aslinya, terlihat karena background-nya #1F1F1F (bukan hitam pekat #000) */
+    filter: none; /* Menghapus semua filter (menjadi hitam murni) */
+    opacity: 1; 
+}
+
+/* Efek Hover Umum (Memperbesar) */
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+
+/* Styling untuk teks keterangan */
+.partner-info {
+    border-top: 1px solid #444444; 
+    padding-top: 30px;
+    margin-top: 30px;
+    color: #cccccc;
+}
+
+.partner-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Styling untuk Link Navbar Active (PENTING!) */
+.navbar-ducati .nav-link {
+    color: #ffffff; 
+    border-bottom: 2px solid transparent; 
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Kunci: Gaya yang MENYOROT link yang memiliki kelas 'active' */
+.navbar-ducati .nav-link.active {
+    color: #E10600 !important; /* Warna Merah Ducati yang mencolok */
+    font-weight: 700;
+    border-bottom: 2px solid #E10600; /* Indikator visual */
+}
